@@ -94,4 +94,45 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+    @Override
+    public String toString() {
+        String nameField;
+        String employerField;
+        String locationField;
+        String positionTypeField;
+        String coreCompetencyField;
+
+        if(this.getName().equals("")) {
+            nameField = "Data not available";
+        } else {
+            nameField = this.getName();
+        }
+        if(this.getEmployer().getValue().equals("")) {
+            employerField = "Data not available";
+        } else {
+            employerField = this.getEmployer().getValue();
+        }
+        if(this.getLocation().getValue().equals("")) {
+            locationField = "Data not available";
+        } else {
+            locationField = this.getLocation().getValue();
+        }
+        if(this.getPositionType().getValue().equals("")) {
+            positionTypeField = "Data not available";
+        } else {
+            positionTypeField = this.getPositionType().getValue();
+        }
+        if(this.getCoreCompetency().getValue().equals("")) {
+            coreCompetencyField = "Data not available";
+        } else {
+            coreCompetencyField = this.getCoreCompetency().getValue();
+        }
+           return "\n" +
+            "ID: " + this.getId() + "\n" +
+            "Name: " + nameField + "\n" +
+            "Employer: " + employerField + "\n" +
+            "Location: " + locationField + "\n" +
+            "Position Type: " + positionTypeField + "\n" +
+            "Core Competency: " + coreCompetencyField + "\n";
+    }
 }
